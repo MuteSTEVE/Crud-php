@@ -31,14 +31,13 @@
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Library</li>
         </ol>
       </nav>
       <hr>
 
       <div class="d-flex justify-content-between">
         <p>Arknights operator record</p>
-        <button type="button" class="btn btn-sm btn-primary"><i class="fa-solid fa-user-plus"></i> Add record</button>
+        <a href="form.php" class="btn btn-sm btn-primary"><i class="fa-solid fa-user-plus"></i> Add record</a>
       </div>
       <br>
 
