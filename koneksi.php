@@ -5,7 +5,7 @@
   $password = 'postgres';
 
   $connection = pg_connect("host=$host dbname=$dbname user=$user password=$password");
-  $status = ($connection) ? "<p>Koneksi terhubung<p>" : "<p>Gagal<p>";
+  $status = ($connection) ? "<p>Koneksi terhubung <i class='fa-solid fa-check'></i><p>" : "<p>Gagal<p>";
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +22,18 @@
     <title>Koneksi</title>
   </head>
   <body>
+    <nav class="text-center navbar bg-body-tertiary">
+      <div class="container-fluid d-flex justify-content-center">
+        <span class="navbar-brand mb-0 h1">Arknights Operator Record collection</span>
+      </div>
+    </nav>
     <div class="container">
-      <?php
-        echo $status;
-      ?>
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+      </nav>
       <hr>
 
       <div class="d-flex justify-content-between">
@@ -78,6 +86,9 @@
           </tbody>
         </table>
       </div>
+      <?php
+        echo $status;
+      ?>
 
     </div>
   </body>
