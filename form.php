@@ -12,23 +12,67 @@
   <title>Document</title>
 </head>
 <body>
+    <nav class="text-center navbar bg-body-tertiary">
+      <div class="container-fluid d-flex justify-content-center">
+        <span class="navbar-brand mb-0 h1">Arknights Operator Record collection</span>
+      </div>
+    </nav>
+
     <div class="container">
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="koneksi.php" style="text-decoration: none;">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Insert record</li>
+        </ol>
+      </nav>
+
+      <div class="card border-light">
+        <div class="card-body">
+          <form>
+            <div class="mb-3 row">
+              <label for="inputname" class="col-sm-2 col-form-label">Codename</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputname">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputimage" class="col-sm-2 col-form-label">Image</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="file" id="inputimage">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputname" class="col-sm-2 col-form-label">Gender</label>
+              <div class="col-sm-10">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Select gender</option>
+                  <option value="1">Male</option>
+                  <option value="0">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputgender" class="col-sm-2 col-form-label">Place of birth</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputgender">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputname" class="col-sm-2 col-form-label">Faction</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputname">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputgender" class="col-sm-2 col-form-label">Date</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputgender">
+              </div>
+            </div>
+          </form>
+
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      </div>
     </div> 
 </body>
 </html>
