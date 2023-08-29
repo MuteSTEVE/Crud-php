@@ -54,7 +54,8 @@
               <th scope="col">Codename</th>
               <th scope="col">Image</th>
               <th scope="col">Gender</th>
-              <th scope="col">Place, date of birth</th>
+              <th scope="col">Place</th>
+              <th scope="col">Date</th>
               <th scope="col">Race</th>
               <th scope="col">Height</th>
               <th scope="col">Faction</th>
@@ -67,7 +68,8 @@
               <td>Magallan</td>
               <td></td>
               <td>Female</td>
-              <td>Columbia, October 7</td>
+              <td>Columbia</td>
+              <td>October 7</td>
               <td>Liberi</td>
               <td>160 cm</td>
               <td>Rhine lab</td>
@@ -81,7 +83,8 @@
               <td>Gummy</td>
               <td></td>
               <td>Female</td>
-              <td>Ursus, October 2</td>
+              <td>Ursus</td>
+              <td>October 2</td>
               <td>Ursus</td>
               <td>155 cm</td>
               <td>Ursus</td>

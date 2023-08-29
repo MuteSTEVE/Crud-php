@@ -52,21 +52,27 @@
               </div>
             </div>
             <div class="mb-3 row">
-              <label for="inputgender" class="col-sm-2 col-form-label">Place of birth</label>
+              <label for="inputgender" class="col-sm-2 col-form-label">Place</label>
               <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputgender">
+                <input type="text" class="form-control" id="inputgender">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputname" class="col-sm-2 col-form-label">Date</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputname">
               </div>
             </div>
             <div class="mb-3 row">
               <label for="inputname" class="col-sm-2 col-form-label">Faction</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputname">
+                <input type="text" class="form-control" id="inputname">
               </div>
             </div>
             <div class="mb-3 row">
               <label for="inputgender" class="col-sm-2 col-form-label">Date</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputgender">
+                <input type="text" class="form-control" id="inputgender">
               </div>
             </div>
           </form>
