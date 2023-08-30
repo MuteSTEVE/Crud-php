@@ -1,3 +1,8 @@
+<?php
+  $value = isset($_GET['edit']) ? 'edit' : 'insert';
+  $text = isset($_GET['edit']) ? 'Save Changes' : 'Submit';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,21 +33,21 @@
 
       <div class="card border-light">
         <div class="card-body">
-          <form>
+          <form method="POST" action="process.php">
             <div class="mb-3 row">
-              <label for="inputname" class="col-sm-2 col-form-label">Codename</label>
+              <label for="codename" class="col-sm-2 col-form-label">Codename</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputname">
+                <input type="text" class="form-control" id="codename">
               </div>
             </div>
             <div class="mb-3 row">
-              <label for="inputimage" class="col-sm-2 col-form-label">Image</label>
+              <label for="image" class="col-sm-2 col-form-label">Image</label>
               <div class="col-sm-10">
-                <input class="form-control" type="file" id="inputimage">
+                <input class="form-control" type="file" id="image">
               </div>
             </div>
             <div class="mb-3 row">
-              <label for="inputname" class="col-sm-2 col-form-label">Gender</label>
+              <label for="gender" class="col-sm-2 col-form-label">Gender</label>
               <div class="col-sm-10">
                 <select class="form-select" aria-label="Default select example">
                   <option selected>Select gender</option>
@@ -52,27 +57,36 @@
               </div>
             </div>
             <div class="mb-3 row">
-              <label for="inputgender" class="col-sm-2 col-form-label">Place</label>
+              <label for="race" class="col-sm-2 col-form-label">Race</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputgender">
+                <input type="text" class="form-control" id="race">
               </div>
             </div>
             <div class="mb-3 row">
-              <label for="inputname" class="col-sm-2 col-form-label">Date</label>
+              <label for="height" class="col-sm-2 col-form-label">Height</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputname">
+                <input type="number" class="form-control" id="height" placeholder="cm">
               </div>
             </div>
             <div class="mb-3 row">
-              <label for="inputname" class="col-sm-2 col-form-label">Faction</label>
+              <label for="place" class="col-sm-2 col-form-label">Place</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputname">
+                <input type="text" class="form-control" id="place" placeholder="place of birth">
               </div>
             </div>
             <div class="mb-3 row">
-              <label for="inputgender" class="col-sm-2 col-form-label">Date</label>
+              <label for="date" class="col-sm-2 col-form-label">Date</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputgender">
+                <input type="text" class="form-control" id="date" placeholder="mm-dd-yy">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <div class="text-center">
+                <a href="koneksi.php" type="submit" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Cancel</a>
+                <button type="submit" name="action" value="<?= $value ?>" class="btn btn-primary">
+                  <?= $text ?>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
               </div>
             </div>
           </form>

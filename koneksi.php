@@ -24,7 +24,7 @@
   <body>
     <nav class="text-center navbar bg-body-tertiary">
       <div class="container-fluid d-flex justify-content-center">
-        <span class="navbar-brand mb-0 h1">Arknights Operator Record collection</span>
+        <span class="navbar-brand mb-0 h1">Arknights operator record collection</span>
       </div>
     </nav>
     <div class="container">
@@ -54,11 +54,10 @@
               <th scope="col">Codename</th>
               <th scope="col">Image</th>
               <th scope="col">Gender</th>
-              <th scope="col">Place</th>
-              <th scope="col">Date</th>
               <th scope="col">Race</th>
               <th scope="col">Height</th>
-              <th scope="col">Faction</th>
+              <th scope="col">Place</th>
+              <th scope="col">Date</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -68,14 +67,13 @@
               <td>Magallan</td>
               <td></td>
               <td>Female</td>
-              <td>Columbia</td>
-              <td>October 7</td>
               <td>Liberi</td>
               <td>160 cm</td>
-              <td>Rhine lab</td>
+              <td>Columbia</td>
+              <td>October 7</td>
               <td>
-                <button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                <a href="form.php?edit=1" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                <a type="button" class="btn btn-danger"><i class="fa fa-trash"></i></a>
               </td>
             </tr>
             <tr>
@@ -84,21 +82,18 @@
               <td></td>
               <td>Female</td>
               <td>Ursus</td>
-              <td>October 2</td>
-              <td>Ursus</td>
               <td>155 cm</td>
               <td>Ursus</td>
+              <td>October 2</td>
               <td>
-                <button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                <a href="form.php?edit=2" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                <a type="button" class="btn btn-danger"><i class="fa fa-trash"></i></a>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <?php
-        echo $status;
-      ?>
+      <?= $status ?>
 
     </div>
   </body>
