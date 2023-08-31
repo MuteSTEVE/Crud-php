@@ -73,7 +73,7 @@
               <td>October 7</td>
               <td>
                 <a href="form.php?edit=1" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                <a type="button" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <a href="process.php?delete=1" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></a>
               </td>
             </tr>
             <tr>
@@ -87,7 +87,7 @@
               <td>October 2</td>
               <td>
                 <a href="form.php?edit=2" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                <a type="button" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <a href="process.php?delete=2" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></a>
               </td>
             </tr>
           </tbody>
