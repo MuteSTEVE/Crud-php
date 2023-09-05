@@ -1,6 +1,9 @@
 <?php
+  $floppy = ' <i class="fa-solid fa-floppy-disk"></i>';
+  $plane = ' <i class="fa-solid fa-paper-plane"></i>';
+
   $value = isset($_GET['edit']) ? 'edit' : 'insert';
-  $text = isset($_GET['edit']) ? 'Save Changes' : 'Submit';
+  $text = isset($_GET['edit']) ? 'Save Changes ' . $floppy : 'Submit ' . $plane;
 ?>
 
 <!DOCTYPE html>
@@ -82,10 +85,9 @@
             </div>
             <div class="mb-3 row">
               <div class="text-center">
-                <a href="koneksi.php" type="submit" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Cancel</a>
+                <a href="index.php" type="submit" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Cancel</a>
                 <button type="submit" name="action" value="<?= $value ?>" class="btn btn-primary">
                   <?= $text ?>
-                  <i class="fa-solid fa-paper-plane"></i>
                 </button>
               </div>
             </div>
