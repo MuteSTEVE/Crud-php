@@ -4,32 +4,15 @@
     <meta charset="UTF-8">
     <!-- bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="js/script.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-    bg-img {
-      position: relative;
-    }
-
-    bg-img::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("img/bg_bridge.png");
-      background-size: cover;
-      background-position: center;
-      filter: blur(5px); /* Add blur effect to the pseudo-element */
-      z-index: -1; /* Send the pseudo-element to the background */
-      margin: 0; /* Set margin to 0 */
-      padding: 0; /* Set padding to 0 */
-    }
-    </style>
     <title>Index</title>
   </head>
   <body>
@@ -60,17 +43,18 @@
         </div>
 
         <div class="table-responsive">
-          <table class="text-center table table-striped table-hover">
+          <table id="example" cellspacing="0" width="100%" class="table table-striped table-hover">
             <thead>
-              <tr class="table-dark">
+              <tr class="table-dark text-center">
                 <th scope="col">No</th>
                 <th scope="col">Codename</th>
+                <th scope="col">Class</th>
                 <th scope="col">Image</th>
+                <th scope="col">Rarity</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Race</th>
                 <th scope="col">Height</th>
-                <th scope="col">Place</th>
-                <th scope="col">Date</th>
+                <th scope="col">Birth</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -78,29 +62,31 @@
               <tr>
                 <th scope="row">1</th>
                 <td>Magallan</td>
+                <td>Supporter</td>
                 <td></td>
+                <td>6</td>
                 <td>Female</td>
                 <td>Liberi</td>
                 <td>160 cm</td>
-                <td>Columbia</td>
                 <td>October 7</td>
                 <td>
-                  <a href="form.php?edit=1" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                  <a href="process.php?delete=1" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                  <a href="form.php?edit=1" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
+                  <a href="process.php?delete=1" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                 </td>
               </tr>
               <tr>
                 <th scope="row">2</th>
                 <td>Gummy</td>
+                <td>Defender</td>
                 <td></td>
+                <td>4</td>
                 <td>Female</td>
                 <td>Ursus</td>
                 <td>155 cm</td>
-                <td>Ursus</td>
                 <td>October 2</td>
                 <td>
-                  <a href="form.php?edit=2" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                  <a href="process.php?delete=2" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                  <a href="form.php?edit=2" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
+                  <a href="process.php?delete=2" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                 </td>
               </tr>
             </tbody>

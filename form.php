@@ -4,6 +4,9 @@
 
   $value = isset($_GET['edit']) ? 'edit' : 'insert';
   $text = isset($_GET['edit']) ? 'Save Changes ' . $floppy : 'Submit ' . $plane;
+
+  $fieldset = isset($_GET['edit']) ? '<fieldset disabled>' : '';
+  $fieldsetc = isset($_GET['edit']) ? '</fieldset>' : '';
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +32,7 @@
     <div class="container">
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="koneksi.php" style="text-decoration: none;">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.php" style="text-decoration: none;">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">Insert record</li>
         </ol>
       </nav>
@@ -49,16 +52,20 @@
                 <input class="form-control" type="file" id="image">
               </div>
             </div>
-            <div class="mb-3 row">
-              <label for="gender" class="col-sm-2 col-form-label">Gender</label>
-              <div class="col-sm-10">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Select gender</option>
-                  <option value="1">Male</option>
-                  <option value="0">Female</option>
-                </select>
+
+            <?= $fieldset ?>
+              <div class="mb-3 row">
+                <label for="disabled-form-select" class="col-sm-2 col-form-label">Gender</label>
+                <div class="col-sm-10">
+                  <select id="disabled-form-select" class="form-select" aria-label="Default select example">
+                    <option selected>Select gender</option>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                  </select>
+                </div>
               </div>
-            </div>
+            <?= $fieldsetc ?>
+            
             <div class="mb-3 row">
               <label for="race" class="col-sm-2 col-form-label">Race</label>
               <div class="col-sm-10">
