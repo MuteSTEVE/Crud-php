@@ -1,10 +1,11 @@
 <?php
   $home = ' <a href="index.php">Home</a>';
 
-  $insert = 'Insert data'; 
-  $edit = 'Edit data'; 
-  $delete = 'Delete data';
+  if(isset($_POST['action'])) {
+    echo $_POST['action'] && $_POST['action'] == 'insert' ? 'Insert data' . $home : 'Edit data' . $home;
+  }
 
-  echo isset($_POST['action']) ? $insert . $home : $edit . $home;
-  echo isset($_GET['delete']) ? $delete . $home : '';
+  if(isset($_GET['delete'])) {
+    echo "Delete data <a href='index.php'>Home</a>";
+  }
 ?>

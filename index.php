@@ -1,16 +1,29 @@
+<?php
+  include('connection.php');
+
+  $query = "SELECT * FROM operator";
+  $sql = mysqli_query($connection, $query);
+  $no = 1;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+    <script>
+      $(document).ready( function () {
+        $('#example').DataTable();
+      } );
+    </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
@@ -34,13 +47,14 @@
         <div class="container">
           <div class="row">
             <div class="col-6">
-              <p>Arknights operator record</p>
+              <h5 class="font-italic"><i class="fa-solid fa-box-archive"></i> Arknights operator record</h5>
             </div>
             <div class="col-6 text-end">
               <a href="form.php" class="btn btn-sm btn-primary"><i class="fa-solid fa-user-plus"></i> Add record</a>
             </div>
           </div>
         </div>
+        <br>
 
         <div class="table-responsive">
           <table id="example" cellspacing="0" width="100%" class="table table-striped table-hover">
@@ -59,36 +73,28 @@
               </tr>
             </thead>
             <tbody>
+              <?php
+                $sql = mysqli_query($connection, $query);
+                while($row = mysqli_fetch_assoc($sql)) {
+              ?>
               <tr>
-                <th scope="row">1</th>
-                <td>Magallan</td>
-                <td>Supporter</td>
-                <td></td>
-                <td>6</td>
-                <td>Female</td>
-                <td>Liberi</td>
-                <td>160 cm</td>
-                <td>October 7</td>
+                <th scope="row"><?= $no++; ?></th>
+                <td><?= $row['codename']; ?></td>
+                <td><?= $row['class']; ?></td>
+                <td><?= $row['image']; ?></td>
+                <td><?= $row['rarity']; ?></td>
+                <td><?= $row['gender'] == 1 ? 'Male' : 'Female' ?></td>
+                <td><?= $row['race']; ?></td>
+                <td><?= $row['height']; ?> cm</td>
+                <td><?= $row['birth']; ?></td>
                 <td>
-                  <a href="form.php?edit=1" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
-                  <a href="process.php?delete=1" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                  <a href="form.php?edit=<?= $row['id'] ?>" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
+                  <a href="process.php?delete=<?= $row['id'] ?>" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Gummy</td>
-                <td>Defender</td>
-                <td></td>
-                <td>4</td>
-                <td>Female</td>
-                <td>Ursus</td>
-                <td>155 cm</td>
-                <td>October 2</td>
-                <td>
-                  <a href="form.php?edit=2" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
-                  <a href="process.php?delete=2" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-                </td>
-              </tr>
+              <?php
+                }
+              ?>
             </tbody>
           </table>
         </div>
@@ -97,9 +103,4 @@
     </main>
   </body>
 </html>
-
-<?php
-  include('connection.php');
-
-  $query = "SELECT * FROM operator";
-?>
+<?= $status ?>
