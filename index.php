@@ -62,13 +62,14 @@
               <tr class="table-dark text-center">
                 <th scope="col">No</th>
                 <th scope="col">Codename</th>
-                <th scope="col">Class</th>
                 <th scope="col">Image</th>
+                <th scope="col">Class</th>
                 <th scope="col">Rarity</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Race</th>
                 <th scope="col">Height</th>
                 <th scope="col">Birth</th>
+                <th scope="col">Faction</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -80,13 +81,14 @@
               <tr>
                 <th scope="row"><?= $no++; ?></th>
                 <td><?= $row['codename']; ?></td>
-                <td><?= $row['class']; ?></td>
                 <td><?= $row['image']; ?></td>
+                <td><?= $row['class']; ?></td>
                 <td><?= $row['rarity']; ?></td>
                 <td><?= $row['gender'] == 1 ? 'Male' : 'Female' ?></td>
                 <td><?= $row['race']; ?></td>
                 <td><?= $row['height']; ?> cm</td>
                 <td><?= $row['birth']; ?></td>
+                <td><?= $row['faction']; ?></td>
                 <td>
                   <a href="form.php?edit=<?= $row['id'] ?>" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
                   <a href="process.php?delete=<?= $row['id'] ?>" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
