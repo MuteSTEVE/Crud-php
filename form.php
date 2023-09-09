@@ -1,6 +1,7 @@
 <?php
   include('connection.php');
   include('process.php');
+  include('header.php');
 
   $fieldset = isset($_GET['edit']) ? '<fieldset disabled>' : '';
   $fieldsetc = isset($_GET['edit']) ? '</fieldset>' : '';
@@ -19,25 +20,15 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <title><?= $value ?></title>
 </head>
 <body>
-    <nav class="text-center navbar bg-body-tertiary">
-      <div class="container-fluid d-flex justify-content-center">
-        <span class="navbar-brand mb-0 h1">Arknights Operator Record collection</span>
-      </div>
-    </nav>
-
+    <?= $nav ?>
     <div class="container">
-      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php" style="text-decoration: none;">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Insert record</li>
-        </ol>
-      </nav>
+      <?= $breadcrumb ?>
 
       <div class="card border-light">
         <div class="card-body">
@@ -107,7 +98,7 @@
             <div class="mb-3 row">
               <label for="birth" class="col-sm-2 col-form-label">Birth</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="birth" birthholder="birth of birth" placeholder="place of birth">
+                <input type="text" class="form-control" id="birth" placeholder="birth of birth">
               </div>
             </div>
 
