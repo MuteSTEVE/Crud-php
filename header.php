@@ -1,6 +1,10 @@
 <?php
-  $arrow = isset($_GET['edit']) ? 'Edit record' : (isset($_GET['insert']) ? 'Insert record' : '');
+  include('connection.php');
+  $query = "SELECT * FROM operator";
+  $sql = mysqli_query($connection, $query);
+  $row = mysqli_fetch_assoc($sql);
 
+  $arrow = isset($_GET['edit']) ? 'Edit record' : (isset($_GET['insert']) ? 'Insert record' : '');
 
   $nav = '
     <nav class="bg-dark text-center navbar ">
