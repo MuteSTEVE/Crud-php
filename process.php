@@ -14,8 +14,6 @@
     echo 'Delete data' . $home;
   }
 
-  isset($_GET['delete']) == 'delete' ? 'Delete' . $home : '' ;
-
   // form.php
   $floppy = ' <i class="fa-solid fa-floppy-disk"></i>';
   $plane = ' <i class="fa-solid fa-paper-plane"></i>';
