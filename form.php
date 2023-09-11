@@ -49,6 +49,7 @@
                 </select>
               </div>
             </div>
+
             <div class="mb-3 row">
               <label for="rarity" class="col-sm-2 col-form-label">Rarity</label>
               <div class="col-sm-10">
@@ -84,7 +85,7 @@
             <div class="mb-3 row">
               <label for="birth" class="col-sm-2 col-form-label">Birth</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="birth" placeholder="birth of birth">
+                <input type="text" class="form-control" id="birth" placeholder="place of birth">
               </div>
             </div>
 
